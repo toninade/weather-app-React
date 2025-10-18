@@ -12,7 +12,7 @@ function App() {
   const [errorMsg, setErrorMsg] = useState(false);
   const [current, setCurrent] = useState({});
   const [expected, setExpected] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   window.addEventListener("load", function () {
     setLoading(true);
@@ -72,6 +72,7 @@ function App() {
     fetchData(
       `https://api.weatherapi.com/v1/forecast.json?key=0a0f7393e6ff4740a13103427251710&q=cairo&days=2`
     );
+    setLoading(false);
   }, []);
 
   return (

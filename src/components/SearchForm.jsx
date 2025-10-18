@@ -14,8 +14,6 @@ const SearchForm = ({ fetchData, getLocation }) => {
     );
   };
 
-  window.addEventListener("load", HandleSbmit);
-
   return (
     <section className="search-content">
       <form onSubmit={HandleSbmit} className="search-form">

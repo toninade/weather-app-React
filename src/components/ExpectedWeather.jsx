@@ -1,5 +1,4 @@
 function ExpectedWeather({ expected }) {
-  console.log(expected);
   return (
     <section className="expected">
       <ul className="expected-list">

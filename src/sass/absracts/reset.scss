@@ -1,0 +1,52 @@
+@use "../helpers/variables" as *;
+
+#root {
+  min-width: 300px;
+  min-height: 500px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+}
+
+input,
+button {
+  border: none;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+figure {
+  margin: 0 !important;
+}
+/* container */
+.main-section {
+  color: $font-color;
+  background: linear-gradient($first-color-card, $sacend-color-card);
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 15px 7px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    $body-backgroundColor,
+    $secande-body-background-color
+  );
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}

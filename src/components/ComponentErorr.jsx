@@ -1,4 +1,5 @@
 import imgErorr from "../../public/imgs/erorr.png";
+import "../sass/components/error.scss";
 
 const ComponentErorr = () => {
   return (

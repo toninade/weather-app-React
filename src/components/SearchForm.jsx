@@ -3,6 +3,7 @@ import {
   faMagnifyingGlass,
   faLocationCrosshairs,
 } from "@fortawesome/free-solid-svg-icons";
+import "../sass/components/search.scss";
 
 const SearchForm = ({ fetchData, getLocation }) => {
   const HandleSbmit = (e) => {
@@ -25,7 +26,11 @@ const SearchForm = ({ fetchData, getLocation }) => {
           placeholder="Enter City"
         />
       </form>
-      <button className="location-btn" onClick={getLocation}>
+      <button
+        className="location-btn"
+        onClick={getLocation}
+        aria-label="auto location"
+      >
         <FontAwesomeIcon icon={faLocationCrosshairs} />
       </button>
     </section>

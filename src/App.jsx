@@ -1,11 +1,13 @@
 import axios from "axios";
-import "./App.css";
+import "./sass/absracts/reset.scss";
 import ContextProvider from "./components/context/Context";
 import CurrentWeather from "./components/CurrentWeather";
 import ExpectedWeather from "./components/ExpectedWeather";
 import SearchForm from "./components/SearchForm";
+import Loading from "./components/Loading";
 import { useEffect, useRef, useState } from "react";
 import ComponentErorr from "./components/ComponentErorr";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const autofill = useRef();
@@ -14,9 +16,6 @@ function App() {
   const [expected, setExpected] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  window.addEventListener("load", function () {
-    setLoading(true);
-  });
   // filter next 24 hours
   const filterHourly = (hourlyDate) => {
     const currenthour = new Date().setMinutes(0, 0, 0);
@@ -45,11 +44,12 @@ function App() {
         ...response.data.forecast.forecastday[1].hour,
       ];
       filterHourly(expected48Hours);
-      setLoading(false);
     } catch {
-      setLoading(false);
       setErrorMsg(true);
     }
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   };
 
   // function to get autmatic location
@@ -74,13 +74,13 @@ function App() {
     fetchData(
       `https://api.weatherapi.com/v1/forecast.json?key=0a0f7393e6ff4740a13103427251710&q=cairo&days=2`
     );
-    setLoading(false);
+    setTimeout(() => setLoading(false), 2000);
   }, []);
 
   return (
     <ContextProvider>
       {loading ? (
-        <p>loading...</p>
+        <Loading />
       ) : (
         <section className="main-section">
           {/* search faild */}

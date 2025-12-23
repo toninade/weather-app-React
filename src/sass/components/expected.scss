@@ -1,0 +1,37 @@
+@use "../helpers/variables" as *;
+
+.expected {
+  border-top: 1px solid $font-color;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  margin-bottom: -14px;
+  &:hover {
+    scrollbar-color: #c5bcdb $sacend-color-card;
+  }
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 40px;
+      transform: scale(1.5);
+    }
+  }
+}
+
+.expected-list {
+  display: flex;
+  list-style: none;
+  padding: 10px 5px 0px;
+  li {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    margin: 0;
+  }
+}

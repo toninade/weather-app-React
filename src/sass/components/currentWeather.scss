@@ -1,0 +1,16 @@
+@use "../helpers/variables" as *;
+
+.current-weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 10px;
+  min-width: 264.5px;
+  figure img {
+    transform: scale(2);
+  }
+  p {
+    font-size: 22px;
+  }
+}

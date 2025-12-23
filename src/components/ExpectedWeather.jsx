@@ -1,3 +1,5 @@
+import "../sass/components/expected.scss";
+
 function ExpectedWeather({ expected }) {
   return (
     <section className="expected">
@@ -7,11 +9,17 @@ function ExpectedWeather({ expected }) {
             <li key={index}>
               <p>{ele.time.split(" ")[1]}</p>
               <figure>
-                <img src={ele.condition.icon} />
+                <img
+                  src={`https:${ele.condition.icon}`}
+                  fetchPriority="high"
+                  width="40"
+                  height="40"
+                  alt="expect img"
+                />
               </figure>
               <p>
                 {Math.floor(ele.temp_c)}
-                <span>c</span>
+                <span>°C</span>
               </p>
             </li>
           );
